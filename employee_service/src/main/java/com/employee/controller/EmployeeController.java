@@ -32,6 +32,11 @@ public class EmployeeController {
 	public List<Employee> readAllEmployee() {
 
 		List<Employee> employeeList = employeeService.readAllEmployee();
+		System.out.println("Service is working");
+		System.out.println("Service is working");
+		System.out.println("Service is working");
+		System.out.println("Service is working");
+		System.out.println("Service is working");
 		return employeeList;
 	}
 

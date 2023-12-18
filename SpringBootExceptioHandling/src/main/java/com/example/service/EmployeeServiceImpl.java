@@ -1,5 +1,8 @@
 package com.example.service;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 import com.example.exception.EmployeeNameNotFoundException;
@@ -27,6 +30,19 @@ public class EmployeeServiceImpl implements EmployeeService {
 			throw new EmployeeNameNotFoundException("Employee Details Not found for this id");
 		}
 
+	}
+
+
+	@Override
+	public List<String> showAllEmployees() {
+		
+		List<String> list = new ArrayList();
+		list.add("Sankar");
+		list.add("panner");
+		list.add("syed");
+		
+		return list;
+		
 	}
 
 

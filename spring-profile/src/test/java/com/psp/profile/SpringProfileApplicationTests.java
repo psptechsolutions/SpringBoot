@@ -1,10 +1,10 @@
-package com.example;
+package com.psp.profile;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class SpringBootExceptioHandlingApplicationTests {
+class SpringProfileApplicationTests {
 
 	@Test
 	void contextLoads() {

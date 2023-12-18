@@ -17,6 +17,7 @@ public class EmployeeService {
 	EmployeeRepository employeeRepository;
 
 	public List<Employee> readAllEmployee() {
+		System.out.println("Coming to EmplyeeService");
 		return employeeRepository.findAll();
 	}
 
