@@ -1,0 +1,10 @@
+# Use a Distroless image for Java applications
+FROM gcr.io/distroless/java:8
+
+# Copy the JAR file from the build stage
+COPY target/employee_service.jar employee_service.jar
+
+# Set the default command to run the application
+#CMD ["/app/employee_service.jar"]
+CMD ["java", "-jar", "/employee_service.jar"]
+

@@ -9,10 +9,13 @@ public class WelcomeController {
 
 	@Value("${env}")
 	private String env;
+	
+	@Value("${name}")
+	private String name;
 
 	@GetMapping("/hello")
 	public String sayHello() {
-		return env;
+		return env +"--"+name;
 	}
 
 }

@@ -1,0 +1,30 @@
+# Use Maven with OpenJDK 11 slim as the base image
+FROM maven:3.8.4-openjdk-11-slim
+
+# Set the working directory inside the container
+WORKDIR /app
+
+# Copy the Maven project file and download dependencies
+COPY pom.xml .
+RUN mvn dependency:go-offline
+
+# Copy the source code
+COPY src src
+
+# Build the application and package the JAR file
+RUN mvn package
+
+# Use the same Maven image as the final base image
+FROM maven:3.8.4-openjdk-11-slim
+
+# Set the working directory inside the container
+WORKDIR /app
+
+# Copy the JAR file from the Maven build
+COPY --from=0 /app/target/employee_service.jar /app/employee_service.jar
+
+# Expose the port on which the Spring Boot application will run
+EXPOSE 8080
+
+# Define the command to run the application
+CMD ["java", "-jar", "employee_service.jar"]

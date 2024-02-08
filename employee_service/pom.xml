@@ -58,6 +58,7 @@
 				</configuration>
 			</plugin>
 		</plugins>
+		<finalName>employee_service</finalName>
 	</build>
 
 </project>

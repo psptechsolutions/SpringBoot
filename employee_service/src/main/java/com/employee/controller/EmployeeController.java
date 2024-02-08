@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.employee.model.Employee;
@@ -40,8 +41,11 @@ public class EmployeeController {
 		return employeeList;
 	}
 
-	@GetMapping("/{employeeId}")
-	public ResponseEntity<Employee> getEmployeeById(@PathVariable long employeeId){
+	//@GetMapping("/{employeeId}")
+	 @GetMapping("/api/resource/{employeeId}")
+	public ResponseEntity<Employee> getEmployeeById(@PathVariable(name = "employeeId", required = false) long employeeId){
+		
+		System.out.println("Heelo");
 		return ResponseEntity.ok().body(employeeService.getEmployeeById(employeeId));
 	}
 	

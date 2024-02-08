@@ -18,6 +18,7 @@ public class Employee {
 	private String lastNm;
 	private int age;
 	private String country;
+	private String state;
 
 	public long getEmployeeId() {
 		return employeeId;
